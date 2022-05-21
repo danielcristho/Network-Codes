@@ -1,0 +1,82 @@
+term length 0
+Sat May 21 08:15:52.191 UTC
+RP/0/RP0/CPU0:show version
+Sat May 21 08:15:52.659 UTC
+
+Cisco IOS XR Software, Version 6.4.1
+Copyright (c) 2013-2017 by Cisco Systems, Inc.
+
+Build Information:
+ Built By     : nkhai
+ Built On     : Wed Mar 28 19:20:20 PDT 2018
+ Build Host   : iox-lnx-090
+ Workspace    : /auto/srcarchive14/prod/6.4.1/xrv9k/ws
+ Version      : 6.4.1
+ Location     : /opt/cisco/XR/packages/
+
+cisco IOS-XRv 9000 () processor 
+System uptime is 5 hours, 52 minutes
+
+RP/0/RP0/CPU0:show run
+Sat May 21 08:15:53.107 UTC
+Building configuration...
+!! IOS XR Configuration version = 6.4.1
+!! Last configuration change at Sat Jul 28 02:38:41 2018 by ZTP
+!
+hostname r2
+banner motd ;
+--------------------------------------------------------------------------
+  Router 2 (Cisco IOS XR Sandbox)
+--------------------------------------------------------------------------
+;
+service timestamps log datetime msec
+service timestamps debug datetime msec
+username admin
+ group root-lr
+ group cisco-support
+ secret 5 $1$A4C9$oaNorr6BXDruE4gDd086L.
+!
+line console
+ timestamp disable
+ exec-timeout 0 0
+!
+call-home
+ service active
+ contact smart-licensing
+ profile CiscoTAC-1
+  active
+  destination transport-method http
+ !
+!
+interface MgmtEth0/RP0/CPU0/0
+ description *** MANAGEMENT INTERFACE ***
+ ipv4 address dhcp
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ shutdown
+!
+interface GigabitEthernet0/0/0/3
+ shutdown
+!
+interface GigabitEthernet0/0/0/4
+ shutdown
+!
+router static
+ address-family ipv4 unicast
+  0.0.0.0/0 192.168.122.1
+ !
+!
+netconf-yang agent
+ ssh
+!
+ssh server v2
+ssh server netconf vrf default
+end
+
+RP/0/RP0/CPU0:
