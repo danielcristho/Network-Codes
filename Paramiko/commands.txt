@@ -1,5 +1,7 @@
 show ip interface brief
 
+enable
+cisco
 config t
 logging buffered 30000
 end
