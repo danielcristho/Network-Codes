@@ -10,4 +10,4 @@
 # nxapi sandbox
 ```
 
-#### launch in browser
+#### launch in browser: http://yourip
