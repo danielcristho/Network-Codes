@@ -14,4 +14,3 @@ conn = manager.connect (
 
 for value in conn.server_capabilities:
     print (value)
-
