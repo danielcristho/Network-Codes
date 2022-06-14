@@ -23,5 +23,3 @@ payload=[
 
 urllib3.disable_warnings()
 response = requests.post(url, verify=False, data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword)).json()
-
-#print(response['result']['body']['sys_ver_str'])

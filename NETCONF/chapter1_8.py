@@ -2,13 +2,12 @@
 
 import requests
 import json
-# from urllib3.exceptions import InsecureRequestWarning
-# from urllib3 import disable_warnings
-#import urllib3
+
 
 url='https://131.226.217.151/ins'
 switchuser='cisco'
 switchpassword='C1sco_1234'
+
 requests.packages.urllib3.disable_warnings()
 
 myheaders={'content-type':'application/json-rpc'}
