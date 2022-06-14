@@ -2,6 +2,7 @@
 
 import requests
 import json
+import urllib3
 
 url='https://131.226.217.151/ins'
 switchuser='cisco'
@@ -13,12 +14,14 @@ payload=[
     "jsonrpc": "2.0",
     "method": "cli",
     "params": {
-      "cmd": "show version",
+      "cmd": "hostname nx-osv-2-new",
       "version": 1.2
     },
     "id": 1
   }
 ]
-response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword)).json()
 
-print(response['result']['body']['sys_ver_str'])
+urllib3.disable_warnings()
+response = requests.post(url, verify=False, data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword)).json()
+
+#print(response['result']['body']['sys_ver_str'])
