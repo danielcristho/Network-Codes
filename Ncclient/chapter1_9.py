@@ -1,5 +1,6 @@
 from ncclient import manager
 
+# Use IOS-XR always on(https://devnetsandbox.cisco.com/RM/Diagram/Index/e83cfd31-ade3-4e15-91d6-3118b867a0dd?diagramType=Topology)
 conn = manager.connect(
     host='sandbox-iosxr-1.cisco.com',
     port=22,
